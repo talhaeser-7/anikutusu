@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser"
 dotenv.config()
 
 const app = express()
-app.use(cors())
+app.use(cors({credentials: true, origin: 'https://anikutusu-talha.netlify.app/'}))
 app.use(express.json({limit :'30mb'}))
 app.use('/memories',memoryRouter)
 app.use('/users',userRouter)
